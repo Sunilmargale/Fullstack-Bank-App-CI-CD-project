@@ -3,7 +3,7 @@ pipeline {
     
     tools {
         jdk 'jdk17'
-        nodejs 'node16'
+        nodejs 'node22'
     }
     
     environment {
@@ -13,7 +13,7 @@ pipeline {
     stages {
                 stage('git pull') {
             steps {
-                git branch: 'main', url: 'https://github.com/epic-croswords/fullstack-bank-proj.git'
+                git branch: 'main', url: 'https://github.com/Sunilmargale/Fullstack-Bank-App-CI-CD-project.git'
             }
         }
         stage('Owasp scan') {
