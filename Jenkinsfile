@@ -61,9 +61,9 @@ pipeline {
         }
         stage('run command to tag local images') {
             steps {
-                sh 'docker tag app_frontend manlineroot12/full-stack-bank:frontend'
-                sh 'docker tag app_backend manlineroot12/full-stack-bank:backend'
-                sh 'docker tag postgres:15.1 manlineroot12/full-stack-bank:database'
+                sh 'docker tag app_frontend sunilmargale/full-stack-bank:frontend'
+                sh 'docker tag app_backend sunilmargale/full-stack-bank:backend'
+                sh 'docker tag postgres:15.1 sunilmargale/full-stack-bank:database'
             }
         }
         stage('push docker images') {
@@ -71,9 +71,9 @@ pipeline {
                 script{
                     withDockerRegistry(credentialsId: 'docker-login', url: 'https://index.docker.io/v1/') {
                         sh 'docker login'
-                        sh 'docker push manlineroot12/full-stack-bank:backend'
-                        sh ' docker push manlineroot12/full-stack-bank:frontend'
-                        sh ' docker push manlineroot12/full-stack-bank:database'
+                        sh 'docker push sunilmargale/full-stack-bank:backend'
+                        sh 'docker push sunilmargale/full-stack-bank:frontend'
+                        sh 'docker push sunilmargale/full-stack-bank:database'
                     }
                 }
             }
