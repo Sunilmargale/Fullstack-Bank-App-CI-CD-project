@@ -69,7 +69,7 @@ pipeline {
         stage('push docker images') {
             steps {
                 script{
-                    withDockerRegistry(credentialsId: 'docker-cred', url: 'https://index.docker.io/v1/') {
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
                         sh 'docker login'
                         sh 'docker push sunilmargale/full-stack-bank:backend'
                         sh 'docker push sunilmargale/full-stack-bank:frontend'
