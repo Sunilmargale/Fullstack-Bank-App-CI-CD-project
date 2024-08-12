@@ -29,7 +29,7 @@ pipeline {
         }
         stage('sonarqube') {
             steps {
-                withSonarQubeEnv('sonar') {
+                withSonarQubeEnv('sonar-scanner') {
                     sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=full-stack-bank \
                     -Dsonar.projectKey=full-stack-bank '''
                 }
