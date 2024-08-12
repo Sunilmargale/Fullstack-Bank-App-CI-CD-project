@@ -61,8 +61,8 @@ pipeline {
         }
         stage('run command to tag local images') {
             steps {
-                sh 'docker tag app_frontend sunilmargale/full-stack-bank:frontend'
-                sh 'docker tag app_backend sunilmargale/full-stack-bank:backend'
+                sh 'docker tag app-frontend sunilmargale/full-stack-bank:frontend'
+                sh 'docker tag app-backend sunilmargale/full-stack-bank:backend'
                 sh 'docker tag postgres:15.1 sunilmargale/full-stack-bank:database'
             }
         }
